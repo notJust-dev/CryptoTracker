@@ -1,0 +1,201 @@
+{
+  "id": "bitcoin",
+  "symbol": "btc",
+  "name": "Bitcoin",
+  "description": {
+    "en": "Bitcoin is the first successful internet money based on peer-to-peer technology; whereby no central bank or authority is involved in the transaction and production of the Bitcoin currency. It was created by an anonymous individual/group under the name, Satoshi Nakamoto. The source code is available publicly as an open source project, anybody can look at it and be part of the developmental process.\r\n\r\nBitcoin is changing the way we see money as we speak. The idea was to produce a means of exchange, independent of any central authority, that could be transferred electronically in a secure, verifiable and immutable way. It is a decentralized peer-to-peer internet currency making mobile payment easy, very low transaction fees, protects your identity, and it works anywhere all the time with no central authority and banks.\r\n\r\nBitcoin is designed to have only 21 million BTC ever created, thus making it a deflationary currency. Bitcoin uses the <a href=\"https://www.coingecko.com/en?hashing_algorithm=SHA-256\">SHA-256</a> hashing algorithm with an average transaction confirmation time of 10 minutes. Miners today are mining Bitcoin using ASIC chip dedicated to only mining Bitcoin, and the hash rate has shot up to peta hashes.\r\n\r\nBeing the first successful online cryptography currency, Bitcoin has inspired other alternative currencies such as <a href=\"https://www.coingecko.com/en/coins/litecoin\">Litecoin</a>, <a href=\"https://www.coingecko.com/en/coins/peercoin\">Peercoin</a>, <a href=\"https://www.coingecko.com/en/coins/primecoin\">Primecoin</a>, and so on.\r\n\r\nThe cryptocurrency then took off with the innovation of the turing-complete smart contract by <a href=\"https://www.coingecko.com/en/coins/ethereum\">Ethereum</a> which led to the development of other amazing projects such as <a href=\"https://www.coingecko.com/en/coins/eos\">EOS</a>, <a href=\"https://www.coingecko.com/en/coins/tron\">Tron</a>, and even crypto-collectibles such as <a href=\"https://www.coingecko.com/buzz/ethereum-still-king-dapps-cryptokitties-need-1-billion-on-eos\">CryptoKitties</a>."
+  },
+  "image": {
+    "thumb": "https://assets.coingecko.com/coins/images/1/thumb/bitcoin.png?1547033579",
+    "small": "https://assets.coingecko.com/coins/images/1/small/bitcoin.png?1547033579",
+    "large": "https://assets.coingecko.com/coins/images/1/large/bitcoin.png?1547033579"
+  },
+  "market_data": {
+    "current_price": {
+      "usd": 56923
+    },
+    "ath": {
+      "usd": 69045
+    },
+    "ath_change_percentage": {
+      "usd": -18.18598
+    },
+    "ath_date": {
+      "usd": "2021-11-10T14:24:11.849Z"
+    },
+    "atl": {
+      "usd": 67.81
+    },
+    "atl_change_percentage": {
+      "usd": 83205.01856
+    },
+    "atl_date": {
+      "usd": "2013-07-06T00:00:00.000Z"
+    },
+    "market_cap": {
+      "usd": 1067018062661
+    },
+    "market_cap_rank": 1,
+    "fully_diluted_valuation": {
+      "usd": 1186254300722
+    },
+    "total_volume": {
+      "usd": 39107942053
+    },
+    "high_24h": {
+      "usd": 56379
+    },
+    "low_24h": {
+      "usd": 55822
+    },
+    "price_change_24h": -915.587350188,
+    "price_change_percentage_24h": -1.59279,
+    "price_change_percentage_7d": -1.10232,
+    "price_change_percentage_14d": -6.65963,
+    "price_change_percentage_30d": -7.45095,
+    "price_change_percentage_60d": 18.3975,
+    "price_change_percentage_200d": 20.92045,
+    "price_change_percentage_1y": 199.97574,
+    "market_cap_change_percentage_24h": -1.78298,
+    "price_change_24h_in_currency": {
+      "usd": -915.587350187991
+    },
+    "price_change_percentage_1h_in_currency": {
+      "usd": -0.05063
+    },
+    "price_change_percentage_24h_in_currency": {
+      "usd": -1.59279
+    },
+    "price_change_percentage_7d_in_currency": {
+      "usd": -1.10232
+    },
+    "price_change_percentage_14d_in_currency": {
+      "usd": -6.65963
+    },
+    "price_change_percentage_30d_in_currency": {
+      "usd": -7.45095
+    },
+    "price_change_percentage_60d_in_currency": {
+      "usd": 18.3975
+    },
+    "price_change_percentage_200d_in_currency": {
+      "usd": 20.92045
+    },
+    "price_change_percentage_1y_in_currency": {
+      "usd": 199.97574
+    },
+    "total_supply": 21000000,
+    "max_supply": 21000000,
+    "circulating_supply": 18889187
+  },
+    "prices": [
+      [
+        1638399794129,
+        57124.866357580555
+      ],
+      [
+        1638403476369,
+        57169.37199381056
+      ],
+      [
+        1638407244512,
+        56916.55089897206
+      ],
+      [
+        1638410441521,
+        57214.082150451875
+      ],
+      [
+        1638414229015,
+        57004.22208925368
+      ],
+      [
+        1638417714496,
+        56367.42957147236
+      ],
+      [
+        1638421425604,
+        56522.443308392365
+      ],
+      [
+        1638425027112,
+        56922.76114582327
+      ],
+      [
+        1638428418970,
+        56571.45952071818
+      ],
+      [
+        1638432235967,
+        56888.684247225356
+      ],
+      [
+        1638435954706,
+        57067.47418828491
+      ],
+      [
+        1638439343039,
+        56709.0773641982
+      ],
+      [
+        1638442935772,
+        56557.24685535338
+      ],
+      [
+        1638446477740,
+        56432.72283091287
+      ],
+      [
+        1638450024595,
+        56503.19396231729
+      ],
+      [
+        1638453873126,
+        56313.93243198974
+      ],
+      [
+        1638457350240,
+        57224.482540373145
+      ],
+      [
+        1638461347302,
+        56547.475100623175
+      ],
+      [
+        1638464498024,
+        56225.08060672014
+      ],
+      [
+        1638468329477,
+        56596.33014616169
+      ],
+      [
+        1638472198746,
+        56855.254695044176
+      ],
+      [
+        1638475482827,
+        56672.25690242264
+      ],
+      [
+        1638478867637,
+        57061.173369713586
+      ],
+      [
+        1638482546642,
+        56923.10861267683
+      ],
+      [
+        1638484132000,
+        56757.67029705151
+      ]
+    ],
+  "tickers": [
+    {
+      "base": "BTC",
+      "target": "USD",
+      "last": 56386,
+      "coin_id": "bitcoin"
+    }
+  ]
+}

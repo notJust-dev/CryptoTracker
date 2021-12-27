@@ -1,5 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { View, Text, Dimensions, TextInput, ActivityIndicator } from "react-native";
+import {
+  View,
+  Text,
+  Dimensions,
+  TextInput,
+  ActivityIndicator,
+} from "react-native";
 import CoinDetailedHeader from "./components/CoinDetailedHeader";
 import styles from "./styles";
 import { AntDesign } from "@expo/vector-icons";
@@ -10,34 +16,56 @@ import {
   ChartYLabel,
 } from "@rainbow-me/animated-charts";
 import { useRoute } from "@react-navigation/native";
-import { getDetailedCoinData, getCoinMarketChart } from '../../services/requests'
+import {
+  getDetailedCoinData,
+  getCoinMarketChart,
+} from "../../services/requests";
+import FilterComponent from "./components/FilterComponent";
+
+const filterDaysArray = [
+  { filterDay: "1", filterText: "24h" },
+  { filterDay: "7", filterText: "7d" },
+  { filterDay: "30", filterText: "30d" },
+  { filterDay: "365", filterText: "1y" },
+  { filterDay: "max", filterText: "All" },
+];
 
 const CoinDetailedScreen = () => {
   const [coin, setCoin] = useState(null);
   const [coinMarketData, setCoinMarketData] = useState(null);
   const route = useRoute();
-  const {params: { coinId }} = route;
+  const {
+    params: { coinId },
+  } = route;
 
   const [loading, setLoading] = useState(false);
   const [coinValue, setCoinValue] = useState("1");
   const [usdValue, setUsdValue] = useState("");
+  const [selectedRange, setSelectedRange] = useState("1");
 
   const fetchCoinData = async () => {
     setLoading(true);
     const fetchedCoinData = await getDetailedCoinData(coinId);
-    const fetchedCoinMarketData = await getCoinMarketChart(coinId);
     setCoin(fetchedCoinData);
-    setCoinMarketData(fetchedCoinMarketData);
-    setUsdValue(fetchedCoinData.market_data.current_price.usd.toString())
+    setUsdValue(fetchedCoinData.market_data.current_price.usd.toString());
     setLoading(false);
-  }
+  };
+
+  const fetchMarketCoinData = async (selectedRangeValue) => {
+    const fetchedCoinMarketData = await getCoinMarketChart(
+      coinId,
+      selectedRangeValue
+    );
+    setCoinMarketData(fetchedCoinMarketData);
+  };
 
   useEffect(() => {
-    fetchCoinData()
-  }, [])
+    fetchCoinData();
+    fetchMarketCoinData(1);
+  }, []);
 
   if (loading || !coin || !coinMarketData) {
-    return <ActivityIndicator size="large" />
+    return <ActivityIndicator size="large" />;
   }
 
   const {
@@ -55,28 +83,39 @@ const CoinDetailedScreen = () => {
   const { prices } = coinMarketData;
 
   const percentageColor =
-    price_change_percentage_24h < 0 ? "#ea3943" : "#16c784" || 'white';
+    price_change_percentage_24h < 0 ? "#ea3943" : "#16c784" || "white";
   const chartColor = current_price.usd > prices[0][1] ? "#16c784" : "#ea3943";
   const screenWidth = Dimensions.get("window").width;
 
   const formatCurrency = (value) => {
     "worklet";
     if (value === "") {
+      if (current_price.usd < 1) {
+        return `$${current_price.usd}`;
+      }
       return `$${current_price.usd.toFixed(2)}`;
+    }
+    if (current_price.usd < 1) {
+      return `$${parseFloat(value)}`;
     }
     return `$${parseFloat(value).toFixed(2)}`;
   };
 
   const changeCoinValue = (value) => {
     setCoinValue(value);
-    const floatValue = parseFloat(value.replace(',', '.')) || 0
-    setUsdValue((floatValue * current_price.usd).toString())
+    const floatValue = parseFloat(value.replace(",", ".")) || 0;
+    setUsdValue((floatValue * current_price.usd).toString());
   };
 
   const changeUsdValue = (value) => {
     setUsdValue(value);
-    const floatValue = parseFloat(value.replace(',', '.')) || 0
-    setCoinValue((floatValue / current_price.usd).toString())
+    const floatValue = parseFloat(value.replace(",", ".")) || 0;
+    setCoinValue((floatValue / current_price.usd).toString());
+  };
+
+  const onSelectedRangeChange = (selectedRangeValue) => {
+    setSelectedRange(selectedRangeValue);
+    fetchMarketCoinData(selectedRangeValue);
   };
 
   return (
@@ -84,7 +123,6 @@ const CoinDetailedScreen = () => {
       <ChartPathProvider
         data={{
           points: prices.map(([x, y]) => ({ x, y })),
-          smoothingStrategy: "bezier",
         }}
       >
         <CoinDetailedHeader
@@ -117,6 +155,17 @@ const CoinDetailedScreen = () => {
               {price_change_percentage_24h?.toFixed(2)}%
             </Text>
           </View>
+        </View>
+        <View style={styles.filtersContainer}>
+          {filterDaysArray.map((day) => (
+            <FilterComponent
+              filterDay={day.filterDay}
+              filterText={day.filterText}
+              selectedRange={selectedRange}
+              setSelectedRange={onSelectedRangeChange}
+              key={day.filterText}
+            />
+          ))}
         </View>
         <View>
           <ChartPath

@@ -28,19 +28,34 @@ const styles = StyleSheet.create({
     height: 40,
     margin: 12,
     borderBottomWidth: 1,
-    borderBottomColor: 'white',
+    borderBottomColor: "white",
     padding: 10,
     fontSize: 16,
-    color: 'white'
+    color: "white",
   },
   filtersContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    backgroundColor: '#2B2B2B',
+    flexDirection: "row",
+    justifyContent: "space-around",
+    backgroundColor: "#2B2B2B",
     paddingVertical: 5,
     borderRadius: 5,
-    marginVertical: 10
+    marginVertical: 10,
+    marginBottom: 20
   },
+  candleStickText: {
+    color: "white",
+    fontWeight: "700",
+  },
+  candleStickDataContainer: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    marginHorizontal: 10,
+    marginTop: 20,
+  },
+  candleStickTextLabel: {
+    color: 'grey',
+    fontSize: 13
+  }
 });
 
 export default styles;

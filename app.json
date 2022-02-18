@@ -2,7 +2,7 @@
   "expo": {
     "name": "notJust Crypto Tracker",
     "slug": "notJustCryptoTracker",
-    "version": "1.0.0",
+    "version": "1.0.3",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
@@ -17,9 +17,13 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.notJust.cryptoTracker",
+      "buildNumber": "7"
     },
     "android": {
+      "package": "com.notJust.cryptotracker",
+      "versionCode": 5,
       "adaptiveIcon": {
         "foregroundImage": "./assets/icon.png",
         "backgroundColor": "#29303A"
